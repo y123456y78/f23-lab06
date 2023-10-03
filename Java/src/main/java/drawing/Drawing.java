@@ -30,10 +30,12 @@ public class Drawing {
      */
     public void draw(String format, String filename) {
         // TODO: Do you notice any issues here?
+        // Code in for loop are the same one. No need to duplicate
         if (format.equals("jpeg")) {
             try (Writer writer = new JPEGWriter(filename + ".jpeg")) {
                 for (Shape shape : this.shapes) {
                     // TODO: What is the issue of the behavior here?
+                    // It can perform that inside itself. No need to pass into it.
                     Line[] lines = shape.toLines();
                     shape.draw(writer, lines);
                 }
