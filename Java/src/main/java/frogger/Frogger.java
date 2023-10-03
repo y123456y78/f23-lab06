@@ -44,9 +44,9 @@ public class Frogger {
     }
 
     // TODO: Do you notice any issues here?
+    // Large (“god”) class: Frogger doesn't need to get the whoe occupied array.
     public boolean isOccupied(int position) {
-        boolean[] occupied = this.road.getOccupied();
-        return occupied[position];
+        return this.road.getOccupiedAt(position);
     }
     
     public boolean isValid(int position) {
